@@ -1,8 +1,8 @@
 {
     "name": "personal-1",
     "private": true,
-    "version": "0.0.0",
-    "description": "a Sails application",
+    "version": "0.0.1",
+    "description": "my first attempt at a personal website",
     "dependencies": {
         "sails": "0.9.16",
         "grunt": "0.4.1",
