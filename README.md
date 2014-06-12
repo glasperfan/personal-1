@@ -1,4 +1,2 @@
-personal-1
-==========
-
-First version of my personal website. Started 12 June 2014.
+# personal-1
+### a Sails application
