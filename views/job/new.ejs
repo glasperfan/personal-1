@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<div id="admin-background">
+	<div id="admin-wrapper" class="page admin-form">
+		<form action="/job/create">
+			<div class="form-title">Create a <i>job</i> below:</div>
+			
+			<div class="form-subtitle">Position</div>
+			<input type="text" name="position" autocomplete="off"><br>
+			
+			<div class="form-subtitle">Group (company, organization, etc.)</div>
+			<input type="text" name="group" autocomplete="off"><br>
+
+			<div class="form-subtitle">Type (employment, activity, education)</div>
+			<input type="text" name="type" autocomplete="off"><br>
+
+			<div class="form-subtitle">Description</div>
+			<textarea name="description" style="width: 645px; height: 101px"></textarea><br>
+			
+			<div class="form-subtitle">Date Started</div>
+			<input type="month" name="dateStarted"><br>
+			
+			<div class="form-subtitle">Is this an ongoing project?</div>
+			<input type="radio" name="alreadyEnded" value="yes" checked>Yes<br>
+			<input type="radio" name="alreadyEnded" value="no">No<br>
+			
+			<div class="form-subtitle date-ended">Date Ended</div>
+			<input type="month" name="dateEnded" class="date-ended"><br>
+			
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</div>

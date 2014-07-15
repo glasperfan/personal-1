@@ -15,7 +15,5 @@
         "debug": "node debug app.js"
     },
     "main": "app.js",
-    "repository": "",
-    "author": "",
-    "license": ""
+    "author": "Hugh Zabriskie"
 }

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<%
+	var month = new Array(); 
+	month[0] = "January";
+	month[1] = "February";
+	month[2] = "March";
+	month[3] = "April";
+	month[4] = "May";
+	month[5] = "June";
+	month[6] = "July";
+	month[7] = "August";
+	month[8] = "September";
+	month[9] = "October";
+	month[10] = "November";
+	month[11] = "December";
+
+  	function createDates(started, ended) {
+  		var starts = new Date(started);
+  		var dates = month[starts.getMonth()] + " " + starts.getFullYear();
+  		if (ended) {
+  			var ends = new Date(ended);
+  			var dates = dates + " - " + month[ends.getMonth()] + " " + ends.getFullYear();
+  		} else {
+  			dates += " - Present";
+  		}
+  		return dates;
+  	}
+%>
+
+<div class="top page" id="top">
+	<div class="top-name" id="title">Hugh Zabriskie</div>
+	<div class="top-caption" id="caption" id="caption">progammer, musician, explorer</div>
+	<img src="/images/arrow483.png" id="page-arrow" style="display:hidden;">
+	<ul id="nav-list">
+		<li><a href="#about">About Me</a></li>
+		<li><a href="#project">Projects</a></li>
+		<li><a href="#updates">Updates</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>
+</div>
+<div class="bio page" id="bio">
+	<div class="title">About Me</div>
+	<div class="subtitle">Work Experience</div>
+	<ul class="jobs">
+		<% _.each(jobs, function (job) { 
+			if(job.type == "employment") {	%>
+		<li>
+			<div class="position"><%- job.position %></div>
+			<div class="group"><%- job.group %></div>
+			<div class="dates"><%- createDates(job.started_at, job.ended_at) %></div>
+			<p class="description"><%- job.description %></p>
+		</li>
+			<% } 
+		}) %>
+	</ul>
+	<div class="subtitle">Other Activities</div>
+	<ul class="jobs">
+		<% _.each(jobs, function (job) { 
+			if(job.type == "activity") {	%>
+		<li>
+			<div class="position"><%- job.position %></div>
+			<div class="group"><%- job.group %></div>
+			<div class="dates"><%- createDates(job.started_at, job.ended_at) %></div>
+			<p class="description"><%- job.description %></p>
+		</li>
+			<% } 
+		}) %>
+	</ul>
+	<div class="subtitle">Education</div>
+	<ul class="jobs">	
+		<% _.each(jobs, function (job) { 
+			if(job.type == "education") {	%>
+		<li>
+			<div class="position"><%- job.position %></div>
+			<div class="group"><%- job.group %></div>
+			<div class="dates"><%- createDates(job.started_at, job.ended_at) %></div>
+			<p class="description"><%- job.description %></p>
+		</li>
+			<% } 
+		}) %>
+	</ul>
+	<div class="subtitle">Skills</div>
+	<ul class="skills">
+		<% _.each(skills, function (skill) {
+			if (skill.type == "music") { %>
+				<li><%- skill.name %></li>
+		<%	} 
+		}); %>
+	</ul>
+	<ul class="skills">
+		<% _.each(skills, function (skill) {
+			if (skill.type == "cs") { %>
+				<li><%- skill.name %></li>
+		<%	} 
+		}); %>
+	</ul>
+	<div class="link resume"><a href="http://localhost:1337/resume.pdf">Download Resume >></a></div>
+	<img src="/images/arrow483.png" id="page-arrow" style="display:hidden;">
+</div>
+<div class="work page" id="work">
+	<div class="title">Work</div>
+	<div class="subtitle">Compositions</div>
+	<ul id="compositions">
+		<li>
+			<div class="piece"><a href="#streetcar">A Streetcar Named Desire</a></div>
+			<div class="instrumentation">Jazz sextet (trumpet, alto sax, clarinet)</div>
+			<div class="dates">2013</div>
+		</li>
+		<li>
+			<div class="piece">Tired Eyes</div>
+			<div class="instrumentation">Piano trio</div>
+			<div class="dates">2011 - 2012</div>
+		</li>
+		<li>
+			<div class="piece">The Actor</div>
+			<div class="instrumentation">Solo piano</div>
+			<div class="dates">2011</div>
+		</li>
+		<li>
+			<div class="piece">Coconut Grove</div>
+			<div class="instrumentation">Jazz quartet</div>
+			<div class="dates">2010</div>
+		</li>
+	</ul>
+	<div class="details">
+		<div class="description-label">Description</div>
+		<div class="description-text">Written to underscore a production of <i>A Streetcar Named Desire</i>, which went up in Adams Pool Theater at Harvard College.</div>
+		<div class="description-label">Links</div>
+		<ol class="description-text">
+			<li><a href="http://localhost:1337/streetcar_opening_tune.pdf">Opening Tune (Sheet Music)</a></li>
+			<li><a href="http://localhost:1337/Canals.aif">Canals</a></li>
+			<li>(Audio) Tired Eyes, Mvmt. I: Nostalgic, Rubato<br>
+				<audio controls loop>
+  				<source src="tired_eyes_mvmt1.mp3" type="audio/mp3">
+  				Your browser does not support the audio element.
+				</audio>
+			</li>
+		</ol>
+	</div>
+	<div class="subtitle">Arrangements</div>
+	<ul id="compositions">
+		<li>
+			<div class="piece">HPT 166: Exit Music</div>
+			<div class="instrumentation">Jazz band</div>
+			<div class="dates">2014</div>
+		</li>
+		<li>
+			<div class="piece">How I Met Your Mother Theme</div>
+			<div class="instrumentation">Jazz band</div>
+			<div class="dates">2014</div>
+		</li>
+		<li>
+			<div class="piece">Killer Queen</div>
+			<div class="instrumentation">Jazz band</div>
+			<div class="dates">2014</div>
+		</li>
+	</ul>
+</div>
