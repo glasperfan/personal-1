@@ -1,158 +1,196 @@
 <!DOCTYPE html>
-<%
-	var month = new Array(); 
-	month[0] = "January";
-	month[1] = "February";
-	month[2] = "March";
-	month[3] = "April";
-	month[4] = "May";
-	month[5] = "June";
-	month[6] = "July";
-	month[7] = "August";
-	month[8] = "September";
-	month[9] = "October";
-	month[10] = "November";
-	month[11] = "December";
 
-  	function createDates(started, ended) {
-  		var starts = new Date(started);
-  		var dates = month[starts.getMonth()] + " " + starts.getFullYear();
-  		if (ended) {
-  			var ends = new Date(ended);
-  			var dates = dates + " - " + month[ends.getMonth()] + " " + ends.getFullYear();
-  		} else {
-  			dates += " - Present";
-  		}
-  		return dates;
-  	}
-%>
-
-<div class="top page" id="top">
-	<div class="top-name" id="title">Hugh Zabriskie</div>
-	<div class="top-caption" id="caption" id="caption">progammer, musician, explorer</div>
-	<img src="/images/arrow483.png" id="page-arrow" style="display:hidden;">
-	<ul id="nav-list">
-		<li><a href="#about">About Me</a></li>
-		<li><a href="#project">Projects</a></li>
-		<li><a href="#updates">Updates</a></li>
+<div id="header">
+	<ul class="pages inline">
+		<li><a href="#about">About</a></li>
+		<li><a href="#work">Work</a></li>
+		<li><a href="#projects">Projects</a></li>
 		<li><a href="#contact">Contact</a></li>
 	</ul>
+	<span><a href="/">Hugh Zabriskie</a></span>
 </div>
-<div class="bio page" id="bio">
-	<div class="title">About Me</div>
-	<div class="subtitle">Work Experience</div>
-	<ul class="jobs">
-		<% _.each(jobs, function (job) { 
-			if(job.type == "employment") {	%>
-		<li>
-			<div class="position"><%- job.position %></div>
-			<div class="group"><%- job.group %></div>
-			<div class="dates"><%- createDates(job.started_at, job.ended_at) %></div>
-			<p class="description"><%- job.description %></p>
-		</li>
-			<% } 
-		}) %>
-	</ul>
-	<div class="subtitle">Other Activities</div>
-	<ul class="jobs">
-		<% _.each(jobs, function (job) { 
-			if(job.type == "activity") {	%>
-		<li>
-			<div class="position"><%- job.position %></div>
-			<div class="group"><%- job.group %></div>
-			<div class="dates"><%- createDates(job.started_at, job.ended_at) %></div>
-			<p class="description"><%- job.description %></p>
-		</li>
-			<% } 
-		}) %>
-	</ul>
-	<div class="subtitle">Education</div>
-	<ul class="jobs">	
-		<% _.each(jobs, function (job) { 
-			if(job.type == "education") {	%>
-		<li>
-			<div class="position"><%- job.position %></div>
-			<div class="group"><%- job.group %></div>
-			<div class="dates"><%- createDates(job.started_at, job.ended_at) %></div>
-			<p class="description"><%- job.description %></p>
-		</li>
-			<% } 
-		}) %>
-	</ul>
-	<div class="subtitle">Skills</div>
-	<ul class="skills">
-		<% _.each(skills, function (skill) {
-			if (skill.type == "music") { %>
-				<li><%- skill.name %></li>
-		<%	} 
-		}); %>
-	</ul>
-	<ul class="skills">
-		<% _.each(skills, function (skill) {
-			if (skill.type == "cs") { %>
-				<li><%- skill.name %></li>
-		<%	} 
-		}); %>
-	</ul>
-	<div class="link resume"><a href="http://localhost:1337/resume.pdf">Download Resume >></a></div>
-	<img src="/images/arrow483.png" id="page-arrow" style="display:hidden;">
-</div>
-<div class="work page" id="work">
-	<div class="title">Work</div>
-	<div class="subtitle">Compositions</div>
-	<ul id="compositions">
-		<li>
-			<div class="piece"><a href="#streetcar">A Streetcar Named Desire</a></div>
-			<div class="instrumentation">Jazz sextet (trumpet, alto sax, clarinet)</div>
-			<div class="dates">2013</div>
-		</li>
-		<li>
-			<div class="piece">Tired Eyes</div>
-			<div class="instrumentation">Piano trio</div>
-			<div class="dates">2011 - 2012</div>
-		</li>
-		<li>
-			<div class="piece">The Actor</div>
-			<div class="instrumentation">Solo piano</div>
-			<div class="dates">2011</div>
-		</li>
-		<li>
-			<div class="piece">Coconut Grove</div>
-			<div class="instrumentation">Jazz quartet</div>
-			<div class="dates">2010</div>
-		</li>
-	</ul>
-	<div class="details">
-		<div class="description-label">Description</div>
-		<div class="description-text">Written to underscore a production of <i>A Streetcar Named Desire</i>, which went up in Adams Pool Theater at Harvard College.</div>
-		<div class="description-label">Links</div>
-		<ol class="description-text">
-			<li><a href="http://localhost:1337/streetcar_opening_tune.pdf">Opening Tune (Sheet Music)</a></li>
-			<li><a href="http://localhost:1337/Canals.aif">Canals</a></li>
-			<li>(Audio) Tired Eyes, Mvmt. I: Nostalgic, Rubato<br>
-				<audio controls loop>
-  				<source src="tired_eyes_mvmt1.mp3" type="audio/mp3">
-  				Your browser does not support the audio element.
-				</audio>
-			</li>
-		</ol>
+
+<div class="top page" style="display:none">
+	<div id="box-wrapper">
+		<span class="musician box">I am a musician...</span>
+		<span class="programmer box">computer programmer...</span>
+		<span class="student box">...and junior at Harvard University.</span>
+		<span class="kayak box">Also, if you are interested in kayaking, we should talk.</span>
 	</div>
-	<div class="subtitle">Arrangements</div>
-	<ul id="compositions">
+</div>
+<div class="about page" style="display:none">
+	<div id="about-wrapper">
+		<h2>Besides a kayaker...</h2>
+		<ul id="about-list">
+			<li>A junior at Harvard University studying computer science and music.</li>
+			<li>A native Houstonian.</li>
+			<li>Highly interested in languages, Russian literature, and all things related to music technology.</li>
+			<li>Pianist, cellist, composer, arranger</li>
+			<li>Swimmer, biker</li>
+		</ul>
+		<h4>Skill Set</h4>
+		<ul id="skill-list" class="inline boxes">
+			<% _.each(skills, function (skill) { %>
+			<li><%- skill.name %></li>
+			<% }); %>
+		</ul>
+	</div>
+	<img src="/images/me.jpg">
+</div>
+<div class="work page" style="display:none">
+	<h2>Work Experience</h2>
+	<div class="link resume"><a href="http://localhost:1337/resume.pdf">Download Resume >></a></div>
+	<ul>
 		<li>
-			<div class="piece">HPT 166: Exit Music</div>
-			<div class="instrumentation">Jazz band</div>
-			<div class="dates">2014</div>
+			<p><b>Cringle GmbH</b> | Berlin, Germany</p>
+			<p><i>Software and Web Development Intern</i> | May 2014 - August 2014</p>
+			<p>Developer for an innovative mobile banking app. Implemented new website and back-end components for securely storing bank data and communicating with payment service providers.</p>
 		</li>
 		<li>
-			<div class="piece">How I Met Your Mother Theme</div>
-			<div class="instrumentation">Jazz band</div>
-			<div class="dates">2014</div>
+			<p><b>Generations Theater Company</b> | Houston, TX</p>
+			<p><i>Keyboardist, Composer</i> | June 2010 - July 2013</p>
+			<p>Primary keyboardist for four summers of professional theater productions. Wrote original underscore for <i>ART</i> (2011).</p>
 		</li>
 		<li>
-			<div class="piece">Killer Queen</div>
-			<div class="instrumentation">Jazz band</div>
-			<div class="dates">2014</div>
+			<p><b>Harvard-Radcliffe Dramatic Club</b> | Cambridge, MA</p>
+			<p><i>Keyboardist, Composer, Music Director</i> | September 2012 - Present</p>
+			<p>Worked on multiple musical productions as music director and keyboardist. Responsiblities include recruiting musicians for the orchestra and teaching music to the cast. Also composed an original underscore for <i>A Streetcar Named Desire</i> (2013).</p>
+	</ul>
+	<h4>What else keeps me busy...</h4>
+	<ul>
+		<li><b>Hasty Pudding Theatricals</b>. October 2012 - Present. Keyboardist and arranger for HPT 165 - 166.</li>
+		<li><b>Harvard Storytime Players</b>. March - May 2013. Composed original songs for the annual musicial, which is put on for children in hospitals around the greater Boston area.</li>
+	</ul>
+</div>
+<div class="projects page" style="display:none">
+	<h2>Labors of Love </h2>
+	<ul id="project-list">
+		<li>
+			<h6>Tired Eyes</h6>
+			<div class="details">
+				<p>Piano trio. Novermber 2011 - March 2012.</p><p>Performed on The Front Row, an NPR radio program dedicated to promoting the arts in Houston.</p>
+				<ul>
+					<li>Movement I 
+						<a href="https://www.youtube.com/watch?v=UxVV0EioIE8" target="_blank">video</a>  
+						<a>pdf</a>
+					</li>
+					<li>Movement II 
+						<a href="https://www.youtube.com/watch?v=c8FIp8WKl8s" target="_blank">video</a>  
+						<a>pdf</a>
+					</li>
+					<li>Movement III 
+						<a href="https://www.youtube.com/watch?v=K9UM1b4R3fU" target="_blank">video</a>  
+						<a>pdf</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h6>A Streetcar Named Desire</h6>
+			<div class="details">
+				<p>Jazz sextet. January 2013 - May 2013.</p><p>Performed on The Front Row, an NPR radio program dedicated to promoting the arts in Houston.</p>
+				<ul>
+					<li>Opening number  
+						<a>pdf</a>
+					</li>
+					<li>Accordion theme  
+						<a>pdf</a>
+					</li>
+					<li>Full score 
+						<a>pdf</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h6>The Actor</h6>
+			<div class="details">
+				<p>Solo piano. July 2011.</p><p>Used to underscore a production of <i>A Streetcar Named Desire</i></a> at Generations Theater Company (2011).</p>
+				<ul>
+					<li>Full score  
+						<a>pdf</a>
+					</li>
+					<li>Solo performance	
+						<a>Audio</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h6>Coconut Grove</h6>
+			<div class="details">
+				<p>Jazz quartet. September 2010.</p><p>Performed with members of the University of Houston Jazz Band at their Spring Concert (2010).</p>
+				<ul>
+					<li>Full score  
+						<a>pdf</a>
+					</li>
+					<li>UH Jazz Band  
+						<a>Audio</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h6>HPT 166 Exit Music</h6>
+			<div class="details">
+				<p>Jazz Band. January 2014.</p><p>Performed as part of <i>HPT166: Victorian Secrets</i> with the Hasty Pudding Theatricals.</p>
+				<ul>
+					<li>Full score  
+						<a>pdf</a>
+					</li>
+					<li>Cast Recording 
+						<a>Audio</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h6>How I Met Your Mother</h6>
+			<div class="details">
+				<p>Jazz Band. January 2014. Original song by the Solids.</p><p>Arranged as the official theme for Hasty Pudding's 2014 <a href="http://hastypudding.org/this-year-honorees" target="_blank">Man of the Year</a>, Neil Patrick Harris.</p>
+				<ul>
+					<li>Full Score
+						<a>pdf</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h6>Killer Queen</h6>
+			<div class="details">
+				<p>Jazz Band. January 2014. Original song by Queen.</p><p>Arranged as the official theme for Hasty Pudding's 2014 <a href="http://hastypudding.org/this-year-honorees" target="_blank">Woman of the Year</a>, Helen Mirren.</p>
+				<ul>
+					<li>Full Score
+						<a>pdf</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h6>Wiggle</h6>
+			<div class="details">
+				<p>Jazz Band. July 2014. Original song by Jason Derulo (feat. Snoop Dogg).</p><p>Arranged for the Hasty Pudding Band. Played for various occassions and whenever the audience needed to be woken up.</p>
+				<ul>
+					<li>Full Score
+						<a>pdf</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h6>This website!</h6>
+			<div class="details">
+				<p>Made with love in a <a href="http://sailsjs.org/" target="_blank">sails.js</a> framework, with HTML5 and CSS3.</p>
+				<ul>
+					<li>The code
+						<a href="https://github.com/glasperfan/personal-1" target="_blank">repo</a>
+					</li>
+				</ul>
+			</div>
 		</li>
 	</ul>
 </div>
+
+<footer>
+	<p>Copyright 2014 Hugh Zabriskie. Feel free to <a href="#contact">contact me!</a> I'm a nice guy. 
+</footer>

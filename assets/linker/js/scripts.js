@@ -1,17 +1,34 @@
 $(document).ready(function() {
 
-	// landing page animation
-    var title = document.getElementById("title");
-	var caption = document.getElementById("caption");
-    if (title && caption) {
-    	TweenLite.from(title, 1.5, {marginLeft:"50px"});
-    	TweenLite.from(caption, 1.5, {marginLeft:"900px"});
+    // upon entering the site, select the correct page
+    var hash = window.location.hash.substr(1);
+    
+    if (hash == '') {
+        $('.top').show();
+    } else {
+        $('.' + hash).show();
     }
 
-    $("#page-arrow").delay(1500).animate({opacity: 1}, 1000);
+    // transitions between pages
+    $('.pages > li > a').click(function() {
+        var hash = this.hash.substr(1);
+        $('.page').hide();
+        if (hash == '') {
+            $('.top').fadeIn(800);
+        } else {
+            $('.' + hash).fadeIn(800);
+        }
+    });
 
-    $("a").click(function() {
-    	$(".details").fadeIn(1000);
+
+    $("#project-list li").click(function() {
+        if ($(this).children().is(':hidden')) {
+            $(this).addClass('active');
+            $(this).children('.details').slideDown(500);
+        } else {
+            $(this).removeClass('active');
+            $(this).children('.details').slideUp(300);
+        }
     });
 
     $("input[name='alreadyEnded']").click(function() {
