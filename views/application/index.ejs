@@ -19,7 +19,7 @@
 	</div>
 </div>
 <div class="about page" style="display:none">
-	<div id="about-wrapper">
+	<div id="about-wrapper" >
 		<h2>Besides a kayaker...</h2>
 		<ul id="about-list">
 			<li>A junior at Harvard University studying computer science and music.</li>
@@ -39,7 +39,7 @@
 </div>
 <div class="work page" style="display:none">
 	<h2>Work Experience</h2>
-	<div class="link resume"><a href="http://localhost:1337/resume.pdf">Download Resume >></a></div>
+	<div class="link button"><a href="http://localhost:1337/resume.pdf">Download Resume >></a></div>
 	<ul>
 		<li>
 			<p><b>Cringle GmbH</b> | Berlin, Germany</p>
@@ -55,6 +55,11 @@
 			<p><b>Harvard-Radcliffe Dramatic Club</b> | Cambridge, MA</p>
 			<p><i>Keyboardist, Composer, Music Director</i> | September 2012 - Present</p>
 			<p>Worked on multiple musical productions as music director and keyboardist. Responsiblities include recruiting musicians for the orchestra and teaching music to the cast. Also composed an original underscore for <i>A Streetcar Named Desire</i> (2013).</p>
+	</ul>
+	<h4>Projects</h4>
+	<ul>
+		<li><b>Das Harmonie</b>. A Python attempt at automatic melodic harmonization. More <a href="https://github.com/glasperfan/dasharmonie" target="_blank">here</a>.</li>
+		<li><b>Course Messenger</b>. A chatroom application designed for lectures, allowing students to post questions, reply and like comments, answer instructor questions, and view responses. Available <a href="http://cs164chatjs.herokuapp.com/login" target="_blank">here</a>.</li>
 	</ul>
 	<h4>What else keeps me busy...</h4>
 	<ul>
@@ -189,6 +194,36 @@
 			</div>
 		</li>
 	</ul>
+</div>
+
+
+<div class="contact page" style="display:none">
+	<div id="contact-desc">
+		<h2>Do you also kayak?</h2>
+		<p>If you would like access to the other music, just shoot me a quick note here! Or if you have another professional interest in my work, please contact me! I'm always looking to find new projects and expand my musical and technological horizons.</p>
+	</div>
+	<div id="contact-window">
+		<h4>Contact Form</h4>
+		<form method="POST" action="/contact">
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" name="name" autocomplete="off" required>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label> 
+				<input type="email" name="email" autocomplete="off" required>
+			</div>
+			<div class="form-group">
+				<label type="subject">Subject</label>
+				<input type="text" name="subject" autocomplete="off" required>
+			</div>
+			<div class="form-group">
+				<label for="message">Message</textarea><br>
+				<textarea name="message" maxlength="1000" autocomplete="off" required></textarea>
+			</div>
+			<button type="submit" class="button">Send</button>
+		</form>
+	</div>
 </div>
 
 <footer>

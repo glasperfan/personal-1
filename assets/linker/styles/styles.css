@@ -46,6 +46,7 @@ h6 {
 	margin-bottom: 0px;
 	padding: 10px 0px 10px 20px;
 }
+
 .page {
 	margin: 0 100px;
 	height: 100vh;
@@ -58,6 +59,24 @@ h6 {
 .inline li {
 	display: inline-block;
 	list-style-type: none;
+}
+
+.button {
+	color: white;
+	font-size: 18px;
+	padding: 10px;
+	background: #5081B5;
+	margin-top: 60px;
+	text-align: center;
+	-webkit-transition: all 0.40s;
+}
+
+.button a {
+	color: white;
+}
+
+.button:hover {
+	background: #00688B;
 }
 
 #header {
@@ -144,8 +163,8 @@ footer {
 }
 
 #about-wrapper {
-	width: 75%;
 	float: left;
+	width: 75%;
 }
 
 #about-list {
@@ -180,11 +199,11 @@ footer {
 	margin-bottom: 15px;
 }
 
-.work h2, .link.resume {
+.work h2, .link.button {
 	display: inline-block;
 }
 
-.link.resume {
+.link.button {
 	float:right;
 	margin-top: 30px;
 }
@@ -225,6 +244,63 @@ footer {
 	text-decoration: underline;
 }
 
+#contact-desc {
+	width: 45%;
+	float: left;
+}
+
+#contact-window {
+	width: 50%;
+	float: right;
+}
+
+#contact-window form {
+	margin-top: 25px;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	font-size: 18px;
+	font-weight: 400;
+	float: left;
+	width: 100px;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+.form-group input, 
+.form-group textarea {
+	width: 250px;
+	font-size: 14px;
+	font-family: 'Exo 2';
+	display: inline-block;
+	border: 1px solid #AAA;
+	padding: 5px 10px;
+	height: 30px;
+}
+
+.form-group textarea {
+	width: 350px;
+	height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+	outline: none;
+	border: 1px solid #4AAEE1;
+}
+
+form button {
+	clear: both;
+	display: inherit;
+	border: none;
+	font-family: 'Exo 2';
+	width: 100px;
+	text-transform: uppercase;
+}
 
 
 /* ------------ */
@@ -311,19 +387,7 @@ footer {
 	background: #5081B5;
 }*/
 
-.resume a {
-	color: white;
-	font-size: 18px;
-	padding: 10px;
-	background: #5081B5;
-	margin-top: 60px;
-	text-align: center;
-	-webkit-transition: all 0.40s;
-}
 
-.resume a:hover {
-	background: #00688B;
-}
 
 #compositions li {
 	display: inline-block;
@@ -427,5 +491,7 @@ footer {
 	font-style: italic;
 	margin: 15px 0px 5px 0px;
 }
+
+
 
 
