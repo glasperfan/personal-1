@@ -20,7 +20,7 @@ $(document).ready(function() {
         }
     });
 
-
+    
     $("#project-list li").click(function() {
         if ($(this).children().is(':hidden')) {
             $(this).addClass('active');

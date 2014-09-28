@@ -2,8 +2,6 @@
  * ApplicationController
  */
 
-var Q = require('q');
-//var email = require('emailjs');
 var nodemailer = require('nodemailer');
 
 module.exports = {
@@ -13,19 +11,6 @@ module.exports = {
   	var promise = Q.all([ Job.find(), Project.find(), Skill.find(), Work.find() ])
 	promise.then(function(results) {
 		return res.view({
-        	jobs: results[0],
-        	projects: results[1],
-        	skills: results[2],
-        	works: results[3]
-    	});
-	});
-  },
-
-  // GET /json
-  json: function(req, res) {
-  	var promise = Q.all([ Job.find(), Project.find(), Skill.find(), Work.find() ])
-	promise.then(function(results) {
-		return res.json({
         	jobs: results[0],
         	projects: results[1],
         	skills: results[2],
