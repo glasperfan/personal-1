@@ -12,5 +12,9 @@
         "debug": "node debug app.js"
     },
     "main": "app.js",
-    "author": "Hugh Zabriskie"
+    "author": "Hugh Zabriskie",
+    "subdomain": "test",
+    "engines": {
+        "node": "0.10.x"
+    }
 }

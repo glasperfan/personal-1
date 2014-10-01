@@ -1,22 +1,14 @@
 /**
  * ApplicationController
  */
-
+ 
 var nodemailer = require('nodemailer');
 
 module.exports = {
     
   // GET /
   index: function(req, res) {
-  	var promise = Q.all([ Job.find(), Project.find(), Skill.find(), Work.find() ])
-	promise.then(function(results) {
-		return res.view({
-        	jobs: results[0],
-        	projects: results[1],
-        	skills: results[2],
-        	works: results[3]
-    	});
-	});
+  	return res.view();
   },
 
   // POST /contact
@@ -24,8 +16,8 @@ module.exports = {
     var transporter = nodemailer.createTransport("SMTP",{
         service: "Gmail",
         auth: {
-            user: "hugh.zabriskie@gmail.com",
-            pass: "Maddie0396"
+            user: "**************@gmail.com",
+            pass: "********"
         }
     });
 
