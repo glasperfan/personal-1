@@ -16,14 +16,14 @@ module.exports = {
     var transporter = nodemailer.createTransport("SMTP",{
         service: "Gmail",
         auth: {
-            user: "hugh.zabriskie@gmail.com",
-            pass: "Maddie0396"
+            user: "************@gmail.com",
+            pass: "******"
         }
     });
 
     var mailOptions = {
       from: req.param('name'),
-      to: 'Hugh Zabriskie, hzabriskie@college.harvard.edu',
+      to: 'Hugh Zabriskie, ******************',
       subject: req.param('subject'), // [WEBSITE] to help identify message
       text: req.param('message') + 
           "\n\n\n\n" + "---\n" +
