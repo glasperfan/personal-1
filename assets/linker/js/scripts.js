@@ -20,7 +20,7 @@ $(document).ready(function() {
         }
     });
 
-    
+    // project list animation
     $("#project-list li").click(function() {
         if ($(this).children().is(':hidden')) {
             $(this).addClass('active');
@@ -31,12 +31,12 @@ $(document).ready(function() {
         }
     });
 
-    $("input[name='alreadyEnded']").click(function() {
-        var answer = $( this ).val();
-        if (answer == "yes") {
-            $(".date-ended").hide()
-        } else {
-            $(".date-ended").show()
+    // contact link in footer
+    $("#to-contact").click(function() {
+        if ($('.contact').is(':hidden')) {
+            $('.page').hide();
+            $('.contact').fadeIn(800);
         }
     });
+
 });

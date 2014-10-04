@@ -1,3 +1,3 @@
 
-# personal-1
-### my first attempt at a personal website
+# Personal website
+### Built in a (super lightweight) sails.js framework.

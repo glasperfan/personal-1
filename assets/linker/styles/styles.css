@@ -318,7 +318,16 @@ form button {
 	width: 50px;
 }
 
+#not-found {
+	margin : 295px auto 0 auto;
+	text-align: center;
+	width: 700px;
+}
 
-
-
-*/*/
+#kayaking {
+	background: url(/images/kayaking.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
