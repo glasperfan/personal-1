@@ -14,9 +14,21 @@
 
 module.exports.policies = {
 
-  // Default policy for all controllers and actions
-  // (`true` allows public access) 
-  '*': true
+  	// Applies to all actions that are not specifically mapped
+  	// true = public access
+  	'*': true,
+
+  	UserController: {
+  		'manage': 'isAdmin',
+  		'create': 'isAdmin',
+  		'destroy': 'isAdmin',
+  		'find': 'isAdmin',
+  	},
+
+  	AcquestController: {
+  		'*': ['isAuthenticated', 'changeLayout']
+  	}
+
 
   /*
 	// Here's an example of adding some policies to a controller

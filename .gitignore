@@ -25,7 +25,6 @@ results
 
 node_modules
 assets
-assets/images
 Canals.aif
 npm-debug.log
 
@@ -45,3 +44,19 @@ nbproject
 # local config
 ########################
 config/local.js
+
+
+########################
+# Login system
+########################
+assets/linker/styles/login.css
+assets/linker/styles/admin.css
+api/controllers/UserController.js
+api/controllers/AcquestController.js
+api/models/User.js
+api/policies
+config/routes.js
+config/policies.js
+views/user
+views/acquest
+views/acquest_layout.ejs

@@ -8,7 +8,7 @@ module.exports = {
     
   // GET /
   index: function(req, res) {
-  	return res.view();
+    return res.view();
   },
 
   // POST /contact

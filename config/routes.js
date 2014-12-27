@@ -36,7 +36,27 @@ module.exports.routes = {
     controller: 'application'
   },
 
-  'post /contact': 'ApplicationController.contact'
+  'post /contact': 'ApplicationController.contact',
+  
+  'get /login': 'UserController.login',                     // sign in portal
+  'post /login': 'UserController.authenticate',             // authenticate
+  '/loginSuccessful': 'UserController.loginSuccessful',     // login success page
+  'get /initialize': 'UserController.initialize',           // for database initialization only
+  'get /user': 'UserController.manage',                     // page for creating and deleting users
+  'get /user/manage': 'UserController.manage',              // redundant (gotta love sails)
+  '/logout': 'UserController.logout',
+
+  // Acquest project
+  '/acquest': 'AcquestController'
+  // '/acquest/partners': 'AcquestController.partners',
+  // '/acquest/services': 'AcquestController.services',
+  // '/acquest/privacy': 'AcquestController.privacy',
+  // '/acquest/relationships': 'AcquestController.relationships',
+  // '/acquest/transactionsdetails': 'AcquestController.transactionsdetails',
+
+};
+
+
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?
@@ -94,7 +114,7 @@ module.exports.routes = {
   'get /*(^.*)': 'UserController.profile'
 
   */
-};
+
 
 
 

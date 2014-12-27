@@ -12,7 +12,7 @@
  * http://sailsjs.org/#documentation
  */
 
-module.exports.adapters = {
+module.exports.connections = {
 
   // If you leave the adapter config unspecified 
   // in a model definition, 'default' will be used.
